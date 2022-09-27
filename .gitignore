@@ -132,3 +132,4 @@ dmypy.json
 # Django stuff:
 *.log
 db.sqlite3
+./locallibrary/__pycache__/settings.cpython-310.pyc
