@@ -132,4 +132,4 @@ dmypy.json
 # Django stuff:
 *.log
 db.sqlite3
-./locallibrary/__pycache__
+/locallibrary/__pycache__
