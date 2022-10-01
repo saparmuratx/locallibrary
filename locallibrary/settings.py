@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'catalog'
 ]
 
 MIDDLEWARE = [
@@ -85,18 +85,26 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
+values = [
+    'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    'django.contrib.auth.password_validation.MinimumLengthValidator',
+    'django.contrib.auth.password_validation.CommonPasswordValidator',
+    'django.contrib.auth.password_validation.NumericPasswordValidator'
+]
+
+
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': values[0],
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': values[1],
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': values[2],
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': values[3],
     },
 ]
 
