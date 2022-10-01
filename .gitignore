@@ -133,3 +133,5 @@ dmypy.json
 *.log
 db.sqlite3
 /locallibrary/__pycache__
+.vscode/
+catalog/
