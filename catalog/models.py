@@ -12,6 +12,15 @@ class Genre(models.Model):
         return self.name
 
 
+class Language(models.Model):
+    """ Model representing language of the book """
+
+    name = models.CharField(max_length=50, help_text='Enter books language.')
+
+    def __str__(self):
+        return self.name
+
+
 class Book(models.Model):
 
     title = models.CharField(max_length=200)
@@ -28,7 +37,14 @@ class Book(models.Model):
 
     # many to many relationship
     genre = models.ManyToManyField(
-        Genre, help_text='Select genre for this book')
+                Genre, help_text='Select genre for this book'
+            )
+
+    language = models.ForeignKey(
+                    'Language',
+                    on_delete=models.SET_NULL,
+                    null=True
+                )
 
     def __str__(self):
         return self.title
